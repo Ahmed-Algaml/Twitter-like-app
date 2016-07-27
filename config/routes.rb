@@ -8,11 +8,11 @@ Rails.application.routes.draw do
 
 	get '/contact' , to: 'static_pages#contact'
 
-	get '/new'  , to: 'users#new' , as: 'signup'
+	get '/new' , to: 'users#new' , as: 'signup'
 
-	get '/login' ,to:'sessions#new'
+	get '/login' ,to: 'sessions#new'
 
-	post '/login' , to:'sessions#create'
+	post '/login' , to: 'sessions#create'
 
 	delete '/logout' , to: 'sessions#destroy'
 

@@ -75,4 +75,19 @@ test "email validation should accept valid addresses" do
         @user.destroy
     end
   end
+
+
+
+  test "should follow and unfollow a user" do 
+    follower = users(:michael)
+    followed = users(:archer)
+    assert_not follower.following?(followed)
+
+    follower.follow(followed)
+    assert follower.following?(followed)
+    assert followed.followers.include?(follower)
+
+    follower.unfollow(followed)
+    assert_not follower.following?(followed)
+  end
 end
